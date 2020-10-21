@@ -26,7 +26,7 @@ set tabstop=4
 set shiftwidth=4
 
 " Don't expand tab to spaces
-set !expandtab
+set expandtab!
 
 " Highlight search matches
 set hlsearch

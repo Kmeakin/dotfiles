@@ -24,4 +24,4 @@ export LESSHISTSIZE=2147483657
 alias wget="wget --hsts-file=${XDG_DATA_HOME}/wget_hsts"
 export INPUTRC="${XDG_CONFIG_HOME}/readline/inputrc"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME}/password-store"
-export VIMINIT='source "$XDG_CONFIG_HOME/vim/vimrc"'
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'; mkdir -p "$XDG_DATA_HOME/vim/{undo,swap,backup,view}"
