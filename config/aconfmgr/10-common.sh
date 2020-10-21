@@ -22,14 +22,6 @@ cat >> "$(CreateFile /etc/sddm.conf.d/kde_settings.conf)" <<EOF
 Current=breeze
 EOF
 
-# XDG
-cat > "$(CreateFile /etc/profile.d/xdg_dirs.sh)" <<"EOF"
-export XDG_HOME="${XDG_HOME:-$HOME/.local}"
-export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$XDG_HOME/config}"
-export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$XDG_HOME/var/cache}"
-export XDG_LOG_HOME="${XDG_LOG_HOME:-$XDG_HOME/var/log}"
-EOF
-
 # Services
 CreateLink /etc/systemd/system/display-manager.service /usr/lib/systemd/system/sddm.service
 CreateLink /etc/systemd/system/getty.target.wants/getty@tty1.service /usr/lib/systemd/system/getty@.service
