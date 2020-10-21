@@ -1,3 +1,6 @@
 [user]
 name = Karl Meakin
 email = karlwfmeakin@gmail.com
+
+[credential]
+helper = /bin/pass-git-helper
