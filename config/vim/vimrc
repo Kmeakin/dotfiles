@@ -1,0 +1,42 @@
+set undodir=$XDG_DATA_HOME/vim/undo
+set directory=$XDG_DATA_HOME/vim/swap
+set backupdir=$XDG_DATA_HOME/vim/backup
+set viewdir=$XDG_DATA_HOME/vim/view
+set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo'
+set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
+
+set nocompatible
+
+" Use Xorg clipboard
+" Require gvim to be installed
+set clipboard=unnamedplus
+
+" Syntax highlighting
+filetype plugin on
+syntax on
+
+" Indentation
+filetype indent on
+
+" Line numbers
+set number
+
+" Set size of tabs to 4 spaces
+set tabstop=4
+set shiftwidth=4
+
+" Don't expand tab to spaces
+set !expandtab
+
+" Highlight search matches
+set hlsearch
+
+" Use incremental searching
+set incsearch
+
+" Ignore case in searches, unless the search pattern contains uppercase
+set ignorecase
+set smartcase
+
+" Copy indent from current line when starting a new line
+set autoindent
