@@ -28,4 +28,4 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'; mk
 test -n "${DISPLAY}" && test -r "${XDG_CONFIG_HOME}/Xresources" && xrdb -load "${XDG_CONFIG_HOME}/Xresources" 
 
 # Map alt-gr to ctrl
-test -n "${DISPLAY}" && setxkbmap -option 'ctrl:ralt_rctrl'
+test -n "${DISPLAY}" && setxkbmap -layout gb -option 'ctrl:ralt_rctrl'
