@@ -1,15 +1,16 @@
 # base packages
 AddPackage base
 AddPackageGroup base-devel
+AddPackage man-db inetutils wget pkgfile
 AddPackage linux linux-firmware intel-ucode efibootmgr
 AddPackage dhcpcd dhclient
-AddPackage --foreign aconfmgr-git
-AddPackage --foreign pikaur
+AddPackage --foreign pikaur aconfmgr-git
 
 # KDE
 AddPackageGroup plasma
 AddPackage dolphin konsole
 AddPackage --foreign systemd-kcm
+AddPackage --foreign jumpapp
 
 # Arc theme
 AddPackage arc-gtk-theme arc-icon-theme
@@ -20,14 +21,25 @@ sed -i 's/Inherits=Moka,Faba,elementary,Adwaita,gnome,hicolor/Inherits=breeze,hi
 # Other graphical stuff
 AddPackage firefox
 
-# Shell tools/dev
+# Dev
 AddPackage git
 AddPackage vi gvim neovim
-AddPackage tree ranger
 AddPackage emacs
 AddPackage ripgrep
+
+# Rust
+AddPackage rustup rust-analyzer sccache
+
+# Shell tools
+AddPackage tree ranger
+AddPackage stow
+AddPackage pass
 AddPackage --foreign atool-git
 
-# rust
-AddPackage rustup rust-analyzer sccache
+# Bash
+AddPackage bash-completion
+
+# Zsh
+AddPackage zsh
+AddPackage --foreign zsh-zinit-git 
 
