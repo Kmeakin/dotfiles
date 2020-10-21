@@ -33,7 +33,8 @@ AddPackage rustup rust-analyzer sccache
 # Shell tools
 AddPackage tree ranger
 AddPackage stow
-AddPackage pass
+AddPackage pass browserpass
+AddPackage --foreign pass-git-helper
 AddPackage --foreign atool-git
 
 # Bash

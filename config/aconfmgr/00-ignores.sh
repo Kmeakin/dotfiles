@@ -20,6 +20,7 @@ IgnorePath '/etc/adjtime'
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/resolv.conf'
 
+IgnorePath '/usr/lib/ghc-*/package.conf.d/*'
 IgnorePath '/usr/lib/locale/locale-archive'
 IgnorePath '/usr/bin/newgidmap'
 IgnorePath '/usr/bin/newuidmap'
