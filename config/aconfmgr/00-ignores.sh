@@ -32,6 +32,6 @@ IgnorePath '/usr/lib/modules/*'
 
 IgnorePath '/boot/*'
 IgnorePath '/mnt/*'
-IgnorePath '/lost+found/*'
+IgnorePath '/lost+found'
 IgnorePath '/tmp/*'
 IgnorePath '/var/*'
