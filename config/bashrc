@@ -1,11 +1,12 @@
+function source_if_exists() {
+	test -r "$1" && . "$1"
+}
+
+source_if_exists "${XDG_CONFIG_HOME}/rc"
+
 # History
 export HISTFILE="${XDG_DATA_HOME}/bash_history";  mkdir -p "$(dirname ${HISTFILE})"
 export HISTSIZE=-1 # unlimited
-
-function source_if_exists() {
-	local f="$1"
-	test -r "$f" && . "$f"
-}
 
 source_if_exists /usr/share/bash-completion/bash_completion
 source_if_exists /usr/share/doc/pkgfile/command-not-found.bash

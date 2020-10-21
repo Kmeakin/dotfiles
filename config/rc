@@ -1,0 +1,62 @@
+# Interactive shell init
+
+# Colors
+eval $(dircolors)
+alias diff="diff --color=auto"
+alias grep="grep --color=auto"
+alias less="less -R"
+export LESS=-R
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+
+# Git aliases
+alias gadd="git add"
+alias gclone="git clone"
+alias gcomm="git commit -m"
+alias gcommit="git commit"
+alias gdiff="git diff"
+alias ginit="git init"
+alias gpull="git pull"
+alias gpush="git push"
+alias glog="git log"
+alias gstat="git status"
+alias gstatus="git status"
+
+# ls aliases
+alias ls="ls --color=auto --group-directories-first"
+alias la="ls -A"  # show all files except for `.` and `..`
+alias lal="la -l" # show all files except for `.` and `..`, and print on seperate lines
+alias lla="la -l"
+alias all="la -l"
+
+alias l="ls -l" # show all files not starting with `.`, and print on seperate lines
+alias ll="ls -l"
+
+alias ls.="ls -d .*"  # show all files starting with `.`
+alias ll.="ls -ld .*" # show all files starting with `.`, and print on seperate lines
+
+# Inherit environment from caller
+alias sudo='sudo -E '
+
+# Package management aliases
+alias pkg-install="pikaur -S"; alias pkgi="pkg-install"
+alias pkg-info="pikaur -Qi"; alias pkgI="pkg-info"
+alias pkg-update="pikaur -Syu"; alias pkgu="pkg-update"
+alias pkg-remove="pikaur -Rs"; alias pkgr="pkg-remove"
+alias pkg-list="pikaur -Qet"; alias pkgl="pkg-list"
+
+# Vim aliases
+alias vim="nvim"
+alias vi="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# Misc aliases
+alias chmox="chmod +x"
+alias mkdir="mkdir -p"
+alias rmdir="rmdir -p"
