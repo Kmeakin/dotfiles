@@ -1,0 +1,34 @@
+$include /etc/inputrc
+
+# Use vim keybindings!
+set editing-mode vi
+
+# Show vim mode in prompt
+set show-mode-in-prompt on
+
+# Change cursor shape depending on insert/command mode
+$if term=linux
+      	set vi-ins-mode-string (ins)\1\e[?0c\2
+      	set vi-cmd-mode-string (cmd)\1\e[?8c\2
+      $else
+      	set vi-ins-mode-string (ins)\1\e[6 q\2
+      	set vi-cmd-mode-string (cmd)\1\e[2 q\2
+$endif
+
+# bind ctrl+j to "cd into parent directory"
+# C-u: delete to beginning of line
+# cd ..: enter verbatim "cd .."
+# C-j: enter
+"\C-h": "\C-u cd .. \C-j"
+
+
+# Faster completions
+set show-all-if-unmodified on
+set show-all-if-ambiguous on
+
+# Colored completions
+set colored-stats on
+set visible-stats on
+set mark-symlinked-directories on
+set colored-completion-prefix on
+set menu-complete-display-prefix on
