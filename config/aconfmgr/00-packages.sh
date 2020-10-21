@@ -14,13 +14,15 @@ AddPackage --foreign systemd-kcm
 # Arc theme
 AddPackage arc-gtk-theme arc-icon-theme
 AddPackage --foreign arc-kde kvantum-theme-arc
+f="$(GetPackageOriginalFile arc-icon-theme /usr/share/icons/Arc/index.theme)"
+sed -i 's/Inherits=Moka,Faba,elementary,Adwaita,gnome,hicolor/Inherits=breeze,hicolor/' "$f"
 
 # Other graphical stuff
 AddPackage firefox
 
 # Shell tools/dev
 AddPackage git
-AddPackage vi vim neovim
+AddPackage vi gvim neovim
 AddPackage tree ranger
 AddPackage emacs
 AddPackage ripgrep
