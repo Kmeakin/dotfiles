@@ -20,6 +20,9 @@ EOF
 cat >> "$(CreateFile /etc/sddm.conf.d/kde_settings.conf)" <<EOF
 [Theme]
 Current=breeze
+
+[X11]
+UserAuthFile=.local/var/run/Xauthority
 EOF
 
 # Services
