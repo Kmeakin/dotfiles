@@ -40,3 +40,6 @@ set smartcase
 
 " Copy indent from current line when starting a new line
 set autoindent
+
+" Auto-create directories for new files
+au BufWritePre,FileWritePre * silent! call mkdir(expand('<afile>:p:h'), 'p')
