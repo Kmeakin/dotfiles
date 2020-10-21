@@ -2,10 +2,7 @@ function source_if_exists() {
 	test -r "$1" && . "$1"
 }
 
-source_if_exists "$HOME/.profile"
 source_if_exists "${XDG_CONFIG_HOME}/rc"
-
-export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
 # Plugins
 source_if_exists /usr/share/doc/pkgfile/command-not-found.zsh
