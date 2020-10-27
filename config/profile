@@ -20,6 +20,8 @@ export XDG_TEMPLATES_DIR="${XDG_TEMPLATES_DIR:-$XDG_USR_DIR/templates}"
 mkdir -p "$XDG_CONFIG_HOME/emacs"
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"; export PATH="$PATH:${CARGO_HOME}/bin"
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
+export CCACHE_CONFIGPATH="${XDG_CONFIG_HOME}/ccache.config"
+export CCACHE_DIR="${XDG_CACHE_HOME}/ccache"
 export LESSHISTFILE="${XDG_DATA_HOME}/less_history"; mkdir -p "$(dirname $LESSHISTFILE)"
 export LESSHISTSIZE=2147483657
 alias wget="wget --hsts-file=${XDG_DATA_HOME}/wget_hsts"
