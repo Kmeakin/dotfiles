@@ -25,6 +25,34 @@ Current=breeze
 UserAuthFile=.local/var/run/Xauthority
 EOF
 
+# makepkg
+makepkg="$(GetPackageOriginalFile pacman /etc/makepkg.conf)"
+patch "${makepkg}" <<"EOF"
+45c45
+< #MAKEFLAGS="-j2"
+---
+> MAKEFLAGS="-j$(nproc)"
+64c64
+< BUILDENV=(!distcc color !ccache check !sign)
+---
+> BUILDENV=(!distcc color ccache check !sign)
+146c146
+< PKGEXT='.pkg.tar.zst'
+---
+> PKGEXT='.pkg.tar'
+EOF
+
+# pacman
+pacman="$(GetPackageOriginalFile pacman /etc/pacman.conf)"
+patch "${pacman}" <<"EOF"
+92,93c92,93
+< #[multilib]
+< #Include = /etc/pacman.d/mirrorlist
+---
+> [multilib]
+> Include = /etc/pacman.d/mirrorlist
+EOF
+
 # Services
 CreateLink /etc/systemd/system/display-manager.service /usr/lib/systemd/system/sddm.service
 CreateLink /etc/systemd/system/getty.target.wants/getty@tty1.service /usr/lib/systemd/system/getty@.service
