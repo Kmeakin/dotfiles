@@ -29,7 +29,6 @@ export INPUTRC="${XDG_CONFIG_HOME}/readline/inputrc"
 export GNUPGHOME="${XDG_DATA_HOME}/gnupg"; mkdir -p "$GNUPGHOME"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME}/password-store"
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'; mkdir -p "$XDG_DATA_HOME/vim/{undo,swap,backup,view}"
-test -n "${DISPLAY}" && test -r "${XDG_CONFIG_HOME}/Xresources" && xrdb -load "${XDG_CONFIG_HOME}/Xresources" 
 
 # Map alt-gr to ctrl
 test -n "${DISPLAY}" && setxkbmap -layout gb -option 'ctrl:ralt_rctrl'

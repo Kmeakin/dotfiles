@@ -60,3 +60,5 @@ export VISUAL="nvim"
 alias chmox="chmod +x"
 alias mkdir="mkdir -p"
 alias rmdir="rmdir -p"
+
+test -n "${DISPLAY}" && test -r "${XDG_CONFIG_HOME}/Xresources" && xrdb -load "${XDG_CONFIG_HOME}/Xresources" 
