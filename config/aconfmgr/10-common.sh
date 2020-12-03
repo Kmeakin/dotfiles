@@ -58,7 +58,6 @@ EOF
 # Services
 CreateLink /etc/systemd/system/display-manager.service /usr/lib/systemd/system/sddm.service
 CreateLink /etc/systemd/system/getty.target.wants/getty@tty1.service /usr/lib/systemd/system/getty@.service
-CreateLink /etc/systemd/system/multi-user.target.wants/dhclient@enp3s0.service /usr/lib/systemd/system/dhclient@.service
 CreateLink /etc/systemd/system/multi-user.target.wants/remote-fs.target /usr/lib/systemd/system/remote-fs.target
 CreateLink /etc/systemd/user/sockets.target.wants/dirmngr.socket /usr/lib/systemd/user/dirmngr.socket
 CreateLink /etc/systemd/user/sockets.target.wants/gpg-agent-browser.socket /usr/lib/systemd/user/gpg-agent-browser.socket
