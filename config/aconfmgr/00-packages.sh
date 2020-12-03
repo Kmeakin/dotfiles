@@ -3,12 +3,13 @@ AddPackage base
 AddPackageGroup base-devel
 AddPackage man-db inetutils wget pkgfile
 AddPackage linux linux-firmware intel-ucode efibootmgr
-AddPackage dhcpcd dhclient
+AddPackage dhcpcd
 AddPackage --foreign pikaur aconfmgr-git
+AddPackage reflector
 
 # KDE
 AddPackageGroup plasma
-AddPackage dolphin konsole
+AddPackage dolphin konsole okular spectacle
 AddPackage --foreign systemd-kcm
 AddPackage --foreign jumpapp
 
@@ -20,15 +21,20 @@ sed -i 's/Inherits=Moka,Faba,elementary,Adwaita,gnome,hicolor/Inherits=breeze,hi
 
 # Other graphical stuff
 AddPackage firefox
+AddPackage steam
+AddPackage thunderbird
+AddPackage vlc
+AddPackage qtkeychain
+AddPackage --foreign ferdi-bin
+AddPackage --foreign runelite
+AddPackage --foreign spotify
+AddPackage --foreign zoom
 
 # Dev
 AddPackage git
 AddPackage vi gvim neovim
-AddPackage emacs
-AddPackage ripgrep
-
-# Rust
-AddPackage rustup rust-analyzer sccache
+AddPackage --foreign emacs-git
+AddPackage --foreign visual-studio-code-bin
 
 # Shell tools
 AddPackage tree ranger
@@ -36,11 +42,26 @@ AddPackage stow
 AddPackage pass browserpass
 AddPackage --foreign pass-git-helper
 AddPackage --foreign atool-git
+AddPackage fd ripgrep tokei
+AddPackage --foreign dust
+AddPackage openssh
+
+# C/C++
+AddPackage clang lld llvm ccache
 
 # Bash
-AddPackage bash-completion
+AddPackage bash-completion bash-language-server shellcheck shfmt
+
+# Java
+CreateLink /usr/lib/jvm/default java-14-openjdk
+CreateLink /usr/lib/jvm/default-runtime java-14-openjdk
+
+# Haskell
+AddPackage ghc
+
+# Rust
+AddPackage rustup rust-analyzer sccache
 
 # Zsh
 AddPackage zsh
-AddPackage --foreign zsh-zinit-git 
-
+AddPackage --foreign zsh-zinit-git

@@ -19,6 +19,7 @@ IgnorePath '/etc/shells'
 IgnorePath '/etc/adjtime'
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/resolv.conf'
+IgnorePath '/usr/lib/vlc/plugins/plugins.dat'
 
 IgnorePath '/usr/lib/ghc-*/package.conf.d/*'
 IgnorePath '/usr/lib/locale/locale-archive'
