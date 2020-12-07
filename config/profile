@@ -7,7 +7,7 @@ export XDG_LOG_HOME="${XDG_LOG_HOME:-$XDG_HOME/var/log}"
 
 # XDG user dirs
 export XDG_USR_DIR="${XDG_USR_DIR:-$HOME/usr}"
-export XDG_DOWNLOAD_DIR="${XDG_DOWNLOAD_DIR:-$XDG_USR_DIR/download}"
+export XDG_DOWNLOAD_DIR="${XDG_DOWNLOAD_DIR:-$XDG_USR_DIR/downloads}"
 export XDG_DOCUMENTS_DIR="${XDG_DOCUMENTS_DIR:-$XDG_USR_DIR/documents}"
 export XDG_MUSIC_DIR="${XDG_MUSIC_DIR:-$XDG_USR_DIR/music}"
 export XDG_PICTURES_DIR="${XDG_PICTURES_DIR:-$XDG_USR_DIR/pictures}"
