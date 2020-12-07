@@ -6,6 +6,7 @@ AddPackage linux linux-firmware intel-ucode efibootmgr
 AddPackage dhcpcd
 AddPackage --foreign pikaur aconfmgr-git
 AddPackage reflector
+AddPackage xdg-user-dirs
 
 # KDE
 AddPackageGroup plasma
@@ -24,7 +25,6 @@ AddPackage firefox
 AddPackage steam
 AddPackage thunderbird
 AddPackage vlc
-AddPackage qtkeychain
 AddPackage --foreign ferdi-bin
 AddPackage --foreign runelite
 AddPackage --foreign spotify
@@ -35,6 +35,9 @@ AddPackage git
 AddPackage vi gvim neovim
 AddPackage --foreign emacs-git
 AddPackage --foreign visual-studio-code-bin
+
+# for some reason these are required for VSCode pair programming to work
+AddPackage qtkeychain gnome-keyring
 
 # Shell tools
 AddPackage tree ranger
@@ -47,7 +50,7 @@ AddPackage --foreign dust
 AddPackage openssh
 
 # C/C++
-AddPackage clang lld llvm ccache
+AddPackage clang lld llvm ccache valgrind
 
 # Bash
 AddPackage bash-completion bash-language-server shellcheck shfmt
