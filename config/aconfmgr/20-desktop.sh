@@ -18,3 +18,5 @@ LABEL=ROOT          	/         	ext4      	rw,relatime	0 1
 LABEL=BOOT          	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro	0 2
 EOF
 
+# Graphics drivers
+AddPackage nvidia
