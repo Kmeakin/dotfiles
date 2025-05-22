@@ -1,0 +1,9 @@
+[user]
+name  = Karl Meakin
+email = karl.meakin@arm.com
+
+[sendemail]
+smtpserver     = mail.arm.com
+smtpserverport = 25
+smtpauth       = none
+smtpencryption = none
