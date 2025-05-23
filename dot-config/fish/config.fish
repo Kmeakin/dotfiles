@@ -2,6 +2,13 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+# XDG base directories
+# See https://wiki.archlinux.org/title/XDG_Base_Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
 alias add-to-list="set --prepend --global --export"
 
 # Homebrew
@@ -23,8 +30,10 @@ add-to-list PATH /opt/homebrew/opt/binutils/bin
 add-to-list LDFLAGS "-L/opt/homebrew/opt/binutils/lib"
 add-to-list CPPFLAGS "-I/opt/homebrew/opt/binutils/include"
 
-# Cargo
-add-to-list PATH $HOME/.cargo/bin
+# Rust
+export RUSTUP_HOME="$XDG_CACHE_HOME/rustup"
+export CARGO_HOME="$XDG_CACHE_HOME/cargo"
+add-to-list PATH "$CARGO_HOME/bin"
 
 # (Neo)vi(m)
 alias vi="nvim"
