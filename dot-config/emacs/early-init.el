@@ -8,6 +8,9 @@
 (section "Debugging"
   (defvar *km/debug* (bound-and-true-p init-file-debug))
   (setopt debug-on-error *km/debug*)
+  (setopt force-load-messages *km/debug*)
+  (setopt debugger-stack-frame-as-list true)
+  (setopt message-log-max true)
 )
 
 (section "Shut up!"
