@@ -20,6 +20,15 @@
   )
 )
 
+(use-package outline
+  :hook
+  ((emacs-lisp-mode) . #'outline-minor-mode)
+  :config
+  (setopt outline-blank-line true)
+  (setopt outline-minor-mode-highlight true)
+  (setopt outline-minor-mode-use-buttons 'in-margins)
+)
+
 (use-package flycheck
   :config
   (setopt flycheck-emacs-lisp-check-declare true)
@@ -59,7 +68,7 @@
   (setopt what-cursor-show-names t)
 )
 
-;;;;; custom
+;;;;; Custom
 (use-package emacs
   :config
   (setopt custom-face-default-form 'all)
