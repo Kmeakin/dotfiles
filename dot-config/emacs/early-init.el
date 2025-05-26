@@ -1,8 +1,6 @@
 ;; -*- lexical-binding: t; -*-
 
-(add-to-list 'load-path
-  (expand-file-name "user-lisp" user-emacs-directory)
-)
+(add-to-list 'load-path (locate-user-emacs-file "user-lisp"))
 (require '+utils)
 
 (section "Debugging"
