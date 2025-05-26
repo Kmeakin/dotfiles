@@ -37,6 +37,10 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 add-to-list PATH "$(dirname $(rustup which cargo))"
 add-to-list PATH "$CARGO_HOME/bin"
 
+# Hammerspoon
+defaults write org.hammerspoon.Hammerspoon MJConfigFile \
+         "$XDG_CONFIG_HOME/hammerspoon/init.lua"
+
 # (Neo)vi(m)
 alias vi="nvim"
 alias vim="nvim"
