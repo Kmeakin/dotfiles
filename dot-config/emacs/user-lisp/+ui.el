@@ -122,4 +122,16 @@
   (treemacs)
 )
 
+;;; Flash on editing changes
+(use-package evil-goggles
+  :hook
+  ((evil-mode) . #'evil-goggles-mode)
+)
+
+;;; Flash line on jump
+(use-package pulsar
+  :config
+  (setopt pulsar-global-mode true)
+)
+
 (provide '+ui)
