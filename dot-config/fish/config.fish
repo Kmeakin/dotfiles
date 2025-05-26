@@ -32,8 +32,9 @@ add-to-list LDFLAGS "-L/opt/homebrew/opt/binutils/lib"
 add-to-list CPPFLAGS "-I/opt/homebrew/opt/binutils/include"
 
 # Rust
-export RUSTUP_HOME="$XDG_CACHE_HOME/rustup"
-export CARGO_HOME="$XDG_CACHE_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+add-to-list PATH "$(dirname $(rustup which cargo))"
 add-to-list PATH "$CARGO_HOME/bin"
 
 # (Neo)vi(m)
