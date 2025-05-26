@@ -14,6 +14,20 @@
   ((emacs-lisp-mode) . #'highlight-quoted-mode)
 )
 
+(use-package macrostep
+  :bind (:map emacs-lisp-mode-map
+  ("C-c e" . #'macrostep-expand)
+  )
+)
+
+(use-package flycheck
+  :config
+  (setopt flycheck-emacs-lisp-check-declare true)
+  (setopt flycheck-emacs-lisp-load-path 'inherit)
+)
+
+(setopt initial-scratch-message ";; -*- lexical-binding: t; -*-\n")
+
 ;;;;; Documentation
 (use-package helpful
   :bind

@@ -5,9 +5,6 @@
 (use-package flycheck
   :config
   (add-hooks [prog-mode-hook] [flycheck-mode])
-  (setopt flycheck-emacs-lisp-check-declare true)
-  (setopt flycheck-emacs-lisp-load-path 'inherit)
-  (setopt flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   (setopt next-error-recenter '(4))
   (setopt next-error-verbose false)
   (defun km/next-error ()
