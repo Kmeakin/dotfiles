@@ -99,4 +99,25 @@
   (add-hooks [prog-mode-hook] [indent-bars-mode])
 )
 
+(use-package treemacs
+  :config
+  (setopt treemacs-file-extension-regex
+          treemacs-first-period-regex-value)
+  (setopt treemacs-indicate-top-scroll-mode false)
+  (setq   treemacs-hide-dot-git-directory false)
+  (setopt treemacs-silent-filewatch true)
+  (setopt treemacs-user-mode-line-format 'none)
+  (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
+
+  (setopt treemacs-indent-guide-mode true)
+  (setopt treemacs-indent-guide-style 'line)
+  (setopt treemacs-indentation-string
+          #(" " 0 1 (face indent-bars-face)))
+  (setopt treemacs-indentation 1)
+
+  (setopt doom-themes-treemacs-theme "doom-colors")
+  (doom-themes-treemacs-config)
+  (treemacs)
+)
+
 (provide '+ui)
