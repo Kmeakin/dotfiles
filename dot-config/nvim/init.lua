@@ -18,6 +18,9 @@ require('mini.deps').setup({ path = { package = path_package } })
 -- Use system clipboard
 vim.opt.clipboard = "unnamedplus"
 
+-- Automatically create directories if not present
+MiniDeps.add("mateuszwieloch/automkdir.nvim")
+
 -- Line numbers
 vim.opt.number = true
 
@@ -40,7 +43,7 @@ MiniDeps.add("scottmckendry/cyberdream.nvim")
 require("cyberdream").setup({ variant = "auto" })
 vim.cmd("colorscheme cyberdream")
 
--- MiniDeps.add("maxmx03/solarized.nvim")
+MiniDeps.add("maxmx03/solarized.nvim")
 -- MiniDeps.add("craftzdog/solarized-osaka.nvim")
 -- MiniDeps.add("ellisonleao/gruvbox.nvim")
 -- MiniDeps.add("sainnhe/sonokai")
