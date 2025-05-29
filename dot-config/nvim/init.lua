@@ -1,45 +1,19 @@
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
+-- Clone 'mini.nvim' manually in a way that it gets managed by 'mini.deps'
+local path_package = vim.fn.stdpath('data') .. '/site/'
+local mini_path = path_package .. 'pack/deps/start/mini.nvim'
+if not vim.loop.fs_stat(mini_path) then
+  vim.cmd('echo "Installing `mini.nvim`" | redraw')
+  local clone_cmd = {
+    'git', 'clone', '--filter=blob:none',
+    'https://github.com/echasnovski/mini.nvim', mini_path
+  }
+  vim.fn.system(clone_cmd)
+  vim.cmd('packadd mini.nvim | helptags ALL')
+  vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
-vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-    spec = {
-        {
-            "maxmx03/solarized.nvim",
-            lazy = false,
-            priority = 1000,
-            opts = {},
-            config = function()
-                vim.o.background = 'light'
-                vim.g.solarized_italics = false
-                vim.g.solarized_visibility = "high"
-                vim.g.solarized_contrast = "normal"
-                vim.cmd.colorscheme("solarized")
-            end
-        },
-        {
-            "lukas-reineke/indent-blankline.nvim",
-            main = "ibl",
-            opts = {},
-            config = function()
-                require("ibl").setup()
-            end
-        },
-    },
-})
+-- Set up 'mini.deps' (customize to your liking)
+require('mini.deps').setup({ path = { package = path_package } })
 
 -- Use system clipboard
 vim.opt.clipboard = "unnamedplus"
@@ -53,3 +27,21 @@ vim.opt.expandtab   = true -- Expand tabs to spaces
 vim.opt.tabstop     = 4    -- Width of tab character
 vim.opt.shiftwidth  = 4    -- Use 4 spaces for indentation
 vim.opt.softtabstop = 4    -- TAB key inserts 4 spaces
+
+MiniDeps.add("lukas-reineke/indent-blankline.nvim")
+require("ibl").setup()
+
+-- Whitespace
+vim.opt.list = true
+vim.o.listchars = 'tab:⇥ ,multispace:•,trail:•'
+
+-- Theme
+MiniDeps.add("scottmckendry/cyberdream.nvim")
+require("cyberdream").setup({ variant = "auto" })
+vim.cmd("colorscheme cyberdream")
+
+-- MiniDeps.add("maxmx03/solarized.nvim")
+-- MiniDeps.add("craftzdog/solarized-osaka.nvim")
+-- MiniDeps.add("ellisonleao/gruvbox.nvim")
+-- MiniDeps.add("sainnhe/sonokai")
+
