@@ -5,6 +5,7 @@
 (defun km/reload-init-file ()
   "Reload the init file."
   (interactive)
+  (setq features (-filter (lambda (feat) (not (string-prefix-p "+" (symbol-name feat)))) features))
   (load-file user-init-file)
   (normal-mode)
 )
