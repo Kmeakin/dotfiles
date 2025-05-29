@@ -7,3 +7,7 @@ smtpserver     = mail.arm.com
 smtpserverport = 25
 smtpauth       = none
 smtpencryption = none
+
+[push]
+# Set upstream branch automatically when pushing
+autoSetupRemote = true
