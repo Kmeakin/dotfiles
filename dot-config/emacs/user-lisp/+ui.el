@@ -52,7 +52,6 @@
 (use-package winum
   :config
   (setopt winum-mode              true) ; Number windows
-  (setopt window-divider-mode     true) ; Extra padding between windows
   (setopt window-resize-pixelwise true) ; Don't round window sizes to whole character
   (setopt split-window-preferred-direction 'horizontal)
 )
