@@ -14,6 +14,18 @@
 (section "Shut up!"
   (setopt save-silently true)
   (setopt jka-compr-verbose false)
+
+  ;; Ignore some annoying errors in interactive commands:
+  (defconst *km/ignored-command-errors* '(
+    beginning-of-buffer end-of-buffer
+    beginning-of-line   end-of-line
+  ))
+  (defun km/command-error-function (data context caller)
+    (unless (memq (car data) *km/ignored-command-errors*)
+      (command-error-default-function data context caller)
+    )
+  )
+  (setopt command-error-function #'km/command-error-function)
 )
 
 (section "Performance"
