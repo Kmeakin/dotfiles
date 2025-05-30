@@ -11,3 +11,12 @@ smtpencryption = none
 [push]
 # Set upstream branch automatically when pushing
 autoSetupRemote = true
+
+[core]
+pager = delta
+
+[interactive]
+diffFilter = delta
+
+[delta]
+side-by-side = true
