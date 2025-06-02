@@ -56,6 +56,7 @@ alias ll="ls -l"
 alias l="ls -l"
 alias cat="bat --theme 'Solarized (light)'"
 alias rg="rg --smart-case"
+alias mkdir="mkdir -p"
 
 alias gadd="git add"
 alias gclone="git clone"
