@@ -25,7 +25,8 @@ MiniDeps.add("mateuszwieloch/automkdir.nvim")
 vim.opt.number = true
 
 -- Indentation
-vim.opt.smartindent = true -- Indent automatically
+vim.opt.smartindent = true -- Indent after certain characters
+vim.opt.autoindent  = true -- Use indent from previous line on new lines
 vim.opt.expandtab   = true -- Expand tabs to spaces
 vim.opt.tabstop     = 4    -- Width of tab character
 vim.opt.shiftwidth  = 4    -- Use 4 spaces for indentation
@@ -37,6 +38,10 @@ require("ibl").setup()
 -- Whitespace
 vim.opt.list = true
 vim.o.listchars = 'tab:⇥ ,multispace:•,trail:•'
+
+-- Search
+vim.opt.ignorecase = true -- Ignore case when searching
+vim.opt.smartcase  = true -- Unless search contains uppercase
 
 -- Theme
 MiniDeps.add("scottmckendry/cyberdream.nvim")
