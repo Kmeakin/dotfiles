@@ -3,3 +3,5 @@ elpaca
 eln-cache
 auto-save-list
 transient
+*.elc
+*.eld

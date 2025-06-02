@@ -31,8 +31,6 @@
   (:map minibuffer-local-map ("M-A" . marginalia-cycle))
 )
 
-
-
 (use-package embark
   :config
   (setopt embark-indicators '(
@@ -61,18 +59,24 @@
 (use-package which-key
   :config
   (setopt which-key-mode true)
-  (setopt which-key-idle-delay 1.0)
+  (setopt which-key-idle-delay 0.25)
   (setopt which-key-max-description-length none)
   (setopt which-key-show-docstrings true)
   (setopt which-key-show-prefix 'top)
   (setopt which-key-popup-type 'side-window)
+  (setopt which-key-side-window-location 'bottom)
   (setopt which-key-sort-uppercase-first false)
+  (setopt which-key-show-remaining-keys t)
+  (setopt which-key-separator " : ")
+  (setopt which-key-use-C-h-commands t)
 )
 
 (use-package nerd-icons)
 (use-package nerd-icons-completion
+  :after marginalia
   :config
   (setopt nerd-icons-completion-mode true) ;; in minibuffer
+  (add-hook 'marginalia-mode-hook #'nerd-icons-completion-marginalia-setup)
 )
 (use-package nerd-icons-corfu
   :config

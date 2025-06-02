@@ -55,6 +55,15 @@
   (advice-add 'helpful-update      :after #'elisp-demos-advice-helpful-update)
 )
 
+(use-package elisp-refs)
+
+(use-package eros
+  :hook (emacs-lisp . eros-mode)
+)
+
+(use-package eros-inspector
+)
+
 (use-package emacs
   :config
   (setopt bind-key-describe-special-forms t)
@@ -74,6 +83,7 @@
   (setopt custom-face-default-form 'all)
   (setopt custom-magic-show 'long)
   (setopt custom-unlispify-tag-names nil)
+  (setopt eldoc-documentation-strategy #'eldoc-documentation-compose-eagerly)
 )
 
 (provide '+lang/emacs-lisp)

@@ -2,8 +2,6 @@
 
 (require '+utils)
 
-(set-frame-font "Fira Code 15")
-
 (use-package doom-themes
   :config
   (setopt custom-safe-themes        true)
@@ -87,12 +85,14 @@
   :config
   (setopt display-line-numbers-width-start true)
   (setopt global-display-line-numbers-mode true)
+  (add-hook 'treemacs-mode-hook (lambda () (display-line-numbers-mode -1)))
 )
 
 (use-package indent-bars
   :config
   (setopt indent-bars-depth-update-delay 0.0)
   (setopt indent-bars-display-on-blank-lines true)
+  (setopt indent-bars-color '(highlight :face-bg t :blend 0.325))
   (setopt indent-bars-pattern "|")
   (setopt indent-bars-starting-column 0)
   (setopt indent-bars-treesit-support true)
@@ -100,10 +100,13 @@
   (add-hooks [prog-mode-hook] [indent-bars-mode])
 )
 
+(use-package all-the-icons)
+
 (use-package treemacs
   :config
   (setopt treemacs-file-extension-regex
           treemacs-first-period-regex-value)
+  (setopt treemacs-follow-mode false)
   (setopt treemacs-indicate-top-scroll-mode false)
   (setq   treemacs-hide-dot-git-directory false)
   (setopt treemacs-silent-filewatch true)
@@ -118,7 +121,6 @@
 
   (setopt doom-themes-treemacs-theme "doom-colors")
   (doom-themes-treemacs-config)
-  (treemacs)
 )
 
 ;;; Flash on editing changes
@@ -132,5 +134,8 @@
   :config
   (setopt pulsar-global-mode true)
 )
+
+(set-frame-font "Fira Code 15")
+(set-frame-parameter nil 'fullscreen 'maximized)
 
 (provide '+ui)
