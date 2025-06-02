@@ -57,6 +57,17 @@ alias l="ls -l"
 alias cat="bat --theme 'Solarized (light)'"
 alias rg="rg --smart-case"
 
+alias gadd="git add"
+alias gclone="git clone"
+alias gcommit="git commit"; alias gcom="git commit"; alias gc="git commit"
+alias gdiff="git diff"; alias gd="git diff"
+alias ginit="git init"
+alias glog="git log"; alias gl="git log"
+alias glog1="git log --online"; alias gl1="git log --online"
+alias gpush="git push"
+alias gpull="git pull"
+alias gstatus="git status"; alias gstat="git status"; alias gs="git status"
+
 # Prompt
 tide configure \
        --auto \
