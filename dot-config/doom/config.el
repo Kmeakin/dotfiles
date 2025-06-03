@@ -38,6 +38,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
+(set-option doom-font "Fira Code 15")
 (set-option custom-safe-themes true)
 (set-option doom-theme 'doom-solarized-dark)
 (load-theme doom-theme)
