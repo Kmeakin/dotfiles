@@ -114,3 +114,29 @@
       :desc "Search files with `fd'"   "/" #'consult-fd
 )
 
+(use-package! keycast
+  :config
+  (defconst km/keycast-ignore
+    [
+     "<up>"   "<down>"
+     "<left>" "<right>"
+     "<wheel-up>"   "<wheel-down>"
+     "<wheel-left>" "<wheel-right>"
+     "<double-wheel-up>"   "<double-wheel-down>"
+     "<double-wheel-left>" "<double-wheel-right>"
+     "<triple-wheel-up>"   "<triple-wheel-down>"
+     "<triple-wheel-left>" "<triple-wheel-right>"
+     self-insert-command
+    ]
+  )
+  (set-option keycast-tab-bar-format "%k%c%R")
+  (set-option tab-bar-format '(tab-bar-separator))
+  (set-option keycast-tab-bar-location 'end)
+  (set-option keycast-substitute-alist
+    (mapcar (lambda (key) (list key none none)) km/keycast-ignore)
+  )
+  (set-option keycast-tab-bar-mode true)
+
+  :hook
+  ((post-command-hook) . #'tab-bar--update-tab-bar-lines)
+)
