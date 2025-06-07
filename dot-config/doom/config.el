@@ -140,3 +140,9 @@
   :hook
   ((post-command-hook) . #'tab-bar--update-tab-bar-lines)
 )
+
+(use-package! highlight-escape-sequences
+  :hook
+  ((prog-mode) . #'hes-mode)
+)
+

@@ -49,3 +49,4 @@
 ;; (unpin! t)
 
 (package! keycast)
+(package! highlight-escape-sequences)
