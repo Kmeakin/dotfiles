@@ -3,11 +3,12 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-(defalias 'set-option 'setq!)
-
 (defconst true  t)
 (defconst false nil)
 (defconst none   nil)
+(defalias 'set-option 'setq!)
+
+(set-option shell-file-name (executable-find "bash"))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
