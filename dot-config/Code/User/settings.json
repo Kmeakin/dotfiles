@@ -1,3 +1,4 @@
+// -*- mode: jsonc; -*-
 {
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
