@@ -49,6 +49,9 @@ alias vimdiff="nvimdiff"
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Pager
+export LESS="--ignore-case --mouse --use-color --RAW-CONTROL-CHARS"
+
 # Convience aliases
 alias which="type --all"
 alias ls="eza --all --header --icons --hyperlink --git --binary"
