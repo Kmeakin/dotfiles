@@ -42,10 +42,10 @@ defaults write org.hammerspoon.Hammerspoon MJConfigFile \
          "$XDG_CONFIG_HOME/hammerspoon/init.lua"
 
 # (Neo)vi(m)
-alias vi="nvim"
-alias vim="nvim"
-alias nvimdiff="nvim -d"
-alias vimdiff="nvimdiff"
+alias vi       "nvim"
+alias vim      "nvim"
+alias nvimdiff "nvim -d"
+alias vimdiff  "nvimdiff"
 export EDITOR=nvim
 export VISUAL=nvim
 
@@ -53,10 +53,9 @@ export VISUAL=nvim
 export LESS="--ignore-case --mouse --use-color --RAW-CONTROL-CHARS"
 
 # Convience aliases
-alias which="type --all"
-alias ls="eza --all --header --icons --hyperlink --git --binary"
-alias ll="ls -l"
-alias l="ls -l"
+alias which "type --all"
+alias ls "eza --all --header --icons --hyperlink --git --binary"
+alias ll "ls -l"; alias l "ls -l"
 
 function cat-or-ls
     if test -d "$argv[1]"
@@ -66,28 +65,32 @@ function cat-or-ls
     end
 end
 
-alias cat="cat-or-ls"
-alias rg="rg --smart-case"
-alias mkdir="mkdir -p"
+alias cat   "cat-or-ls"
+alias rg    "rg --smart-case"
+alias mkdir "mkdir -p"
 
-alias gadd="git add"
-alias gclone="git clone"
-alias gcommit="git commit"; alias gcom="git commit"; alias gc="git commit"
-alias gdiff="git diff"; alias gd="git diff"
-alias ginit="git init"
-alias glog="git log"; alias gl="git log"
-alias glog1="git log --online"; alias gl1="git log --online"
-alias gpush="git push"
-alias gpull="git pull"
-alias gstatus="git status"; alias gstat="git status"; alias gs="git status"
+alias gadd    "git add"           ; alias ga    "git add"    ;
+alias gclone  "git clone"         ; alias gcl   "git clone"  ;
+alias gcommit "git commit"        ; alias gcom  "git commit" ; alias gc "git commit"  ;
+alias gdiff   "git diff"          ; alias gd    "git diff"   ;
+alias ginit   "git init"          ; alias gi    "git init"   ;
+alias glog    "git log"           ; alias gl    "git log"    ;
+alias glog1   "git log --oneline" ; alias gl1   "git log1"   ;
+alias gpush   "git push"          ; alias gpsh  "git push"   ; alias gps "git push"   ;
+alias gpull   "git pull"          ; alias gpll  "git pull"   ; alias gpl "git pull"   ; alias gp "git pull" ;
+alias gstatus "git status"        ; alias gstat "git status" ; alias gs  "git status" ;
+
+function git-ammend
+    # TODO
+end
 
 # Prompt
-tide configure \
-       --auto \
-       --style=Lean \
-       --prompt_colors='True color' \
-       --show_time='24-hour format' \
+tide configure                         \
+       --auto                          \
+       --style='Lean'                  \
+       --prompt_colors='True color'    \
+       --show_time='24-hour format'    \
        --lean_prompt_height='One line' \
-       --prompt_spacing=Compact \
-       --icons='Many icons' \
+       --prompt_spacing=Compact        \
+       --icons='Many icons'            \
        --transient=No
