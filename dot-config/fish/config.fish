@@ -57,7 +57,16 @@ alias which="type --all"
 alias ls="eza --all --header --icons --hyperlink --git --binary"
 alias ll="ls -l"
 alias l="ls -l"
-alias cat="bat --theme 'Solarized (light)'"
+
+function cat-or-ls
+    if test -d "$argv[1]"
+        ls "$argv[1]"
+    else
+        bat --theme 'Solarized (light)' "$argv[1]"
+    end
+end
+
+alias cat="cat-or-ls"
 alias rg="rg --smart-case"
 alias mkdir="mkdir -p"
 
