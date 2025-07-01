@@ -9,37 +9,46 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-alias add-to-list="set --prepend --global --export"
+alias push-front="set --prepend --global --export"
+alias push-back="set --append --global --export"
+alias unset="set --erase"
 
 # Homebrew
-export HOMEBREW_PREFIX="/opt/homebrew"
-export HOMEBREW_REPOSITORY="/opt/homebrew"
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+if test "$(uname)" = "Darwin"
+    export HOMEBREW_PREFIX="/opt/homebrew"
+    export HOMEBREW_REPOSITORY="/opt/homebrew"
+    export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
 
-add-to-list PATH /opt/homebrew/bin
-add-to-list PATH /opt/homebrew/sbin
-add-to-list INFOPATH /opt/homebrew/share/info
-add-to-list MANPATH /opt/homebrew/share/man
+    push-front PATH /opt/homebrew/bin
+    push-front PATH /opt/homebrew/sbin
 
-## LLVM
-add-to-list PATH "/opt/homebrew/opt/llvm/bin"
-add-to-list LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
-add-to-list CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
+    push-front INFOPATH /opt/homebrew/share/info
+    push-front MANPATH /opt/homebrew/share/man
 
-## GCC
-add-to-list PATH "/opt/homebrew/opt/binutils/bin"
-add-to-list LDFLAGS "-L/opt/homebrew/opt/binutils/lib"
-add-to-list CPPFLAGS "-I/opt/homebrew/opt/binutils/include"
+    # Use the built-in search paths if all other entries fail
+    push-back INFOPATH ""
+    push-back MANPATH ""
+
+    ## LLVM
+    push-front PATH "/opt/homebrew/opt/llvm/bin"
+    push-front LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
+    push-front CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
+
+    ## GCC
+    push-front PATH "/opt/homebrew/opt/binutils/bin"
+    push-front LDFLAGS "-L/opt/homebrew/opt/binutils/lib"
+    push-front CPPFLAGS "-I/opt/homebrew/opt/binutils/include"
+
+    # Hammerspoon
+    defaults write org.hammerspoon.Hammerspoon MJConfigFile \
+        "$XDG_CONFIG_HOME/hammerspoon/init.lua"
+end
 
 # Rust
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
-add-to-list PATH "$(dirname $(rustup which cargo))"
-add-to-list PATH "$CARGO_HOME/bin"
-
-# Hammerspoon
-defaults write org.hammerspoon.Hammerspoon MJConfigFile \
-         "$XDG_CONFIG_HOME/hammerspoon/init.lua"
+push-front PATH "$(dirname $(rustup which cargo))"
+push-front PATH "$CARGO_HOME/bin"
 
 # (Neo)vi(m)
 alias vi       "nvim"
