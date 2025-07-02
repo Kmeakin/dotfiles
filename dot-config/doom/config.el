@@ -91,6 +91,18 @@
   (set-option which-key-show-docstrings false)
 )
 
+(defun me/save-all ()
+  (interactive)
+  (save-some-buffers 'noconfirm)
+)
+
+(defun me/save-without-formatting ()
+  (interactive)
+  (let ((apheleia-mode nil))
+    (save-buffer)
+  )
+)
+
 (map! :leader
       :desc "Commands" "SPC" #'execute-extended-command
       :desc "Focus 0th window" "0" #'winum-select-window-0
@@ -109,8 +121,8 @@
       :desc "Split horizontally" "-" #'evil-window-split
 
       :prefix "f"
-      :desc "Save all files"           "a" (cmd! (save-some-buffers 'noconfirm))
-      :desc "Save file w/o formatting" "S" (cmd! (let ((current-prefix-arg 2)) (call-interactively #'save-buffer)))
+      :desc "Save all files"           "a" #'me/save-all
+      :desc "Save file w/o formatting" "S" #'me/save-without-formatting
       :desc "Search files with `fd'"   "/" #'consult-fd
 )
 
