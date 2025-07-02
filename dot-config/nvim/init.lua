@@ -44,12 +44,9 @@ vim.opt.ignorecase = true -- Ignore case when searching
 vim.opt.smartcase  = true -- Unless search contains uppercase
 
 -- Theme
-MiniDeps.add("scottmckendry/cyberdream.nvim")
-require("cyberdream").setup({ variant = "auto" })
-vim.cmd("colorscheme cyberdream")
-
-MiniDeps.add("maxmx03/solarized.nvim")
+-- MiniDeps.add("scottmckendry/cyberdream.nvim")
 -- MiniDeps.add("craftzdog/solarized-osaka.nvim")
 -- MiniDeps.add("ellisonleao/gruvbox.nvim")
 -- MiniDeps.add("sainnhe/sonokai")
-
+MiniDeps.add("maxmx03/solarized.nvim")
+vim.cmd("colorscheme solarized")
