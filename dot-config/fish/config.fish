@@ -78,16 +78,26 @@ alias cat   "cat-or-ls"
 alias rg    "rg --smart-case"
 alias mkdir "mkdir -p"
 
-alias gadd    "git add"           ; alias ga    "git add"    ;
-alias gclone  "git clone"         ; alias gcl   "git clone"  ;
-alias gcommit "git commit"        ; alias gcom  "git commit" ; alias gc "git commit"  ;
-alias gdiff   "git diff"          ; alias gd    "git diff"   ;
-alias ginit   "git init"          ; alias gi    "git init"   ;
-alias glog    "git log"           ; alias gl    "git log"    ;
-alias glog1   "git log --oneline" ; alias gl1   "git log1"   ;
-alias gpush   "git push"          ; alias gpsh  "git push"   ; alias gps "git push"   ;
-alias gpull   "git pull"          ; alias gpll  "git pull"   ; alias gpl "git pull"   ; alias gp "git pull" ;
-alias gstatus "git status"        ; alias gstat "git status" ; alias gs  "git status" ;
+
+function alias-many
+    set cmd $argv[1]
+    for arg in $argv[2..]
+        alias "$arg" "$cmd"
+    end
+end
+
+alias-many "git add"             gadd ga
+alias-many "git clone"           gclone gcl
+alias-many "git commit"          gcommit gcomm gcom gc
+alias-many "git diff"            gdiff gd
+alias-many "git diff --staged"   gdiffs gds
+alias-many "git init"            ginit gi
+alias-many "git log"             glog gl
+alias-many "git log --oneline"   glog1 gl1
+alias-many "git push"            gpush gpsh
+alias-many "git pull"            gpull gpll gp
+alias-many "git status"          gstatus gstat gs
+alias-many "git status --staged" gstatuss gstats gss
 
 function git-ammend
     # TODO
