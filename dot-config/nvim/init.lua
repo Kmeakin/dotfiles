@@ -37,7 +37,7 @@ require("ibl").setup()
 
 -- Whitespace
 vim.opt.list = true
-vim.o.listchars = 'tab:⇥ ,multispace:•,trail:•'
+vim.opt.listchars = 'tab:⇥ ,multispace:•,trail:•'
 
 -- Search
 vim.opt.ignorecase = true -- Ignore case when searching
