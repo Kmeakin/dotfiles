@@ -103,6 +103,10 @@ function git-ammend
     # TODO
 end
 
+function manswitch
+    man $argv[1] | less -p "^ +$argv[2]"
+end
+
 # Prompt
 tide configure                         \
        --auto                          \
