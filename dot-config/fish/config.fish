@@ -1,5 +1,14 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    # Prompt
+    tide configure                     \
+       --auto                          \
+       --style='Lean'                  \
+       --prompt_colors='True color'    \
+       --show_time='24-hour format'    \
+       --lean_prompt_height='One line' \
+       --prompt_spacing=Compact        \
+       --icons='Many icons'            \
+       --transient=No
 end
 
 # XDG base directories
@@ -109,16 +118,6 @@ function manswitch
     man $argv[1] | less -p "^ +$argv[2]"
 end
 
-# Prompt
-tide configure                         \
-       --auto                          \
-       --style='Lean'                  \
-       --prompt_colors='True color'    \
-       --show_time='24-hour format'    \
-       --lean_prompt_height='One line' \
-       --prompt_spacing=Compact        \
-       --icons='Many icons'            \
-       --transient=No
 
 function last-history-item
     echo $history[1]
