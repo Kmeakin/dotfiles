@@ -42,6 +42,8 @@ if test "$(uname)" = "Darwin"
     # Hammerspoon
     defaults write org.hammerspoon.Hammerspoon MJConfigFile \
         "$XDG_CONFIG_HOME/hammerspoon/init.lua"
+else
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 end
 
 # Rust
@@ -125,3 +127,11 @@ abbr -a !! --position anywhere --function last-history-item
 
 # Theme
 fish_config theme choose 'Solarized Dark'
+
+if test -d (brew --prefix)"/share/fish/completions"
+    set -p fish_complete_path (brew --prefix)/share/fish/completions
+end
+
+if test -d (brew --prefix)"/share/fish/vendor_completions.d"
+    set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
+end
