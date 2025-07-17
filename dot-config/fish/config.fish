@@ -98,6 +98,8 @@ alias-many "git push"            gpush gpsh
 alias-many "git pull"            gpull gpll gp
 alias-many "git status"          gstatus gstat gs
 alias-many "git status --staged" gstatuss gstats gss
+alias-many "git unstage"         gunstage gun gu
+abbr --command git "unstage" "restore --staged"
 
 function git-ammend
     # TODO
