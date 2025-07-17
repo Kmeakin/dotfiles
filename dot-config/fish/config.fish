@@ -70,10 +70,11 @@ function cat-or-ls
     if test -d "$argv[1]"
         ls "$argv[1]"
     else
-        bat --theme 'Solarized (light)' "$argv[1]"
+        bat "$argv[1]"
     end
 end
 
+alias bat   "bat --theme 'Solarized (light)'"
 alias cat   "cat-or-ls"
 alias rg    "rg --smart-case"
 alias mkdir "mkdir -p"
