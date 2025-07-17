@@ -9,9 +9,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-alias push-front="set --prepend --global --export"
-alias push-back="set --append --global --export"
-alias unset="set --erase"
+alias push-front "set --prepend --global --export"
+alias push-back  "set --append  --global --export"
+alias unset      "set --erase"
 
 # Homebrew
 if test "$(uname)" = "Darwin"
@@ -50,11 +50,16 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 push-front PATH "$(dirname $(rustup which cargo))"
 push-front PATH "$CARGO_HOME/bin"
 
+function alias-many
+    set cmd $argv[1]
+    for arg in $argv[2..]
+        alias "$arg" "$cmd"
+    end
+end
+
 # (Neo)vi(m)
-alias vi       "nvim"
-alias vim      "nvim"
-alias nvimdiff "nvim -d"
-alias vimdiff  "nvimdiff"
+alias-many "nvim" "vi" "vim"
+alias-many "nvim -d" "vimdiff" "nvimdiff"
 export EDITOR=nvim
 export VISUAL=nvim
 
@@ -78,14 +83,6 @@ alias bat   "bat --theme 'Solarized (light)'"
 alias cat   "cat-or-ls"
 alias rg    "rg --smart-case"
 alias mkdir "mkdir -p"
-
-
-function alias-many
-    set cmd $argv[1]
-    for arg in $argv[2..]
-        alias "$arg" "$cmd"
-    end
-end
 
 alias-many "git add"             gadd ga
 alias-many "git clone"           gclone gcl
