@@ -123,3 +123,5 @@ function last-history-item
 end
 abbr -a !! --position anywhere --function last-history-item
 
+# Theme
+fish_config theme choose 'Solarized Dark'
