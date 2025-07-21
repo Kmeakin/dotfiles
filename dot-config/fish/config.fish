@@ -95,6 +95,10 @@ alias cat   "cat-or-ls"
 alias rg    "rg --smart-case"
 alias mkdir "mkdir -p"
 
+function pyeval
+    python3 -c "print($argv)"
+end
+
 alias-many "git add"             gadd ga
 alias-many "git clone"           gclone gcl
 alias-many "git commit"          gcommit gcomm gcom gc
