@@ -105,7 +105,7 @@
 
 (map! :leader
       :desc "Commands" "SPC" #'execute-extended-command
-      :desc "Focus 0th window" "0" #'winum-select-window-0
+      :desc "Focus 0th window" "0" #'treemacs-select-window
       :desc "Focus 1st window" "1" #'winum-select-window-1
       :desc "Focus 2nd window" "2" #'winum-select-window-2
       :desc "Focus 3rd window" "3" #'winum-select-window-3
