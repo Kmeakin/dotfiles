@@ -158,3 +158,12 @@
   ((prog-mode) . #'hes-mode)
 )
 
+(set-option delete-selection-mode true)
+(set-option mark-even-if-inactive false)
+
+(set-option frame-title-format     "Doom Emacs: %b")
+(set-option ns-use-proxy-icon       false) ; Disable document icon in titlebar
+(set-option window-resize-pixelwise true)  ; Don't round window sizes to whole character
+(set-option frame-resize-pixelwise  true)  ; Don't round frame size to line height
+(set-option ring-bell-function      #'doom-themes-visual-bell-fn)
+
