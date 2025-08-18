@@ -141,5 +141,16 @@
     "workbench.editor.scrollToSwitchTabs": true,
     "workbench.preferredDarkColorTheme": "doom-solarized-dark",
     "workbench.preferredLightColorTheme": "Solarized Light",
-    "workbench.tree.renderIndentGuides": "always"
+    "workbench.tree.renderIndentGuides": "always",
+    "terminal.integrated.rightClickBehavior": "default",
+    "terminal.integrated.profiles.linux": {
+        "fish (linuxbrew)": {
+            "path": "/home/linuxbrew/.linuxbrew/bin/fish"
+        },
+    },
+    "terminal.integrated.scrollback": 2147483647,
+    "terminal.integrated.defaultProfile.linux": "fish (linuxbrew)",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontWeight": "normal",
 }
