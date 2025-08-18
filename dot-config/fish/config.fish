@@ -58,8 +58,8 @@ end
 # Rust
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
-push-front PATH "$(dirname $(rustup which cargo))"
 push-front PATH "$CARGO_HOME/bin"
+push-front PATH "$(brew --prefix rustup)/bin"
 
 function alias-many
     set cmd $argv[1]
