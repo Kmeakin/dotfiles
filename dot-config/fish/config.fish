@@ -113,10 +113,9 @@ alias-many "git status"          gstatus gstat gs
 alias-many "git status --staged" gstatuss gstats gss
 alias-many "git unstage"         gunstage gun gu
 abbr --command git "unstage" "restore --staged"
-
-function git-ammend
-    # TODO
-end
+abbr --command git "ammend" "commit --ammend"
+abbr --command git "log1" "log --oneline"
+abbr --command git "stat" "status"
 
 function manswitch
     man $argv[1] | less -p "^ +$argv[2]"
