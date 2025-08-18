@@ -142,5 +142,14 @@
         "key": "ctrl+l",
         "command": "file-browser.stepIn",
         "when": "inFileBrowser"
-    }
+    },
+    {
+        "key": "meta+`",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "meta+`",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
 ]
