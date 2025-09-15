@@ -68,6 +68,13 @@ function alias-many
     end
 end
 
+function abbr-many
+    set cmd $argv[1]
+    for arg in $argv[2..]
+        abbr "$arg" "$cmd"
+    end
+end
+
 # (Neo)vi(m)
 alias-many "nvim" "vi" "vim"
 alias-many "nvim -d" "vimdiff" "nvimdiff"
@@ -99,23 +106,25 @@ function pyeval
     python3 -c "print($argv)"
 end
 
-alias-many "git add"             gadd ga
-alias-many "git clone"           gclone gcl
-alias-many "git commit"          gcommit gcomm gcom gc
-alias-many "git diff"            gdiff gd
-alias-many "git diff --staged"   gdiffs gds
-alias-many "git init"            ginit gi
-alias-many "git log"             glog gl
-alias-many "git log --oneline"   glog1 gl1
-alias-many "git push"            gpush gpsh
-alias-many "git pull"            gpull gpll gp
-alias-many "git status"          gstatus gstat gs
-alias-many "git status --staged" gstatuss gstats gss
-alias-many "git unstage"         gunstage gun gu
+abbr-many "git add"             gadd ga
+abbr-many "git clone"           gclone gcl
+abbr-many "git commit"          gcommit gcomm gcom gc
+abbr-many "git diff"            gdiff gd
+abbr-many "git diff --staged"   gdiffs gds
+abbr-many "git init"            ginit gi
+abbr-many "git log"             glog gl
+abbr-many "git log --oneline"   glog1 gl1
+abbr-many "git push"            gpush gpsh
+abbr-many "git pull"            gpull gpll gp
+abbr-many "git status"          gstatus gstat gs
+abbr-many "git status --staged" gstatuss gstats gss
+abbr-many "git unstage"         gunstage gun gu
 abbr --command git "unstage" "restore --staged"
 abbr --command git "ammend" "commit --ammend"
 abbr --command git "log1" "log --oneline"
 abbr --command git "stat" "status"
+abbr gri "git rebase --interactive"
+abbr grc "git rebase --continue"
 
 function manswitch
     man $argv[1] | less -p "^ +$argv[2]"
