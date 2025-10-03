@@ -97,10 +97,11 @@ function cat-or-ls
     end
 end
 
-alias bat   "bat --theme 'Solarized (light)'"
-alias cat   "cat-or-ls"
-alias rg    "rg --smart-case"
-alias mkdir "mkdir -p"
+alias bat     "bat --theme-light='Solarized (light)' --theme-dark='Solarized (dark)'"
+alias cat     "cat-or-ls"
+alias realcat "command cat"
+alias rg      "rg --smart-case"
+alias mkdir   "mkdir -p"
 
 function pyeval
     python3 -c "import math; print($argv)"
