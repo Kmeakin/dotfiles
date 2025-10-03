@@ -103,7 +103,7 @@ alias rg    "rg --smart-case"
 alias mkdir "mkdir -p"
 
 function pyeval
-    python3 -c "print($argv)"
+    python3 -c "import math; print($argv)"
 end
 
 abbr-many "git add"             gadd ga
