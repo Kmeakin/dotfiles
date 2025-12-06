@@ -89,16 +89,25 @@ alias which "type --all"
 alias ls "eza --all --header --icons --git --binary"
 alias-many "ls -l" ll l
 
-function cat-or-ls
-    if test -d "$argv[1]"
-        ls "$argv[1]"
+function show
+    if not set -q argv[1]
+        echo "USAGE: show THING"
+        return
+    end
+
+    set thing $argv[1]
+
+    if test -d "$thing"
+        ls "$thing"
+    else if test -f "$thing"
+        bat "$thing"
     else
-        bat "$argv[1]"
+        echo "Don't know how to show '$thing'"
     end
 end
 
+abbr cat "show"
 alias bat     "bat --theme-light='Solarized (light)' --theme-dark='Solarized (dark)'"
-alias cat     "cat-or-ls"
 alias realcat "command cat"
 alias rg      "rg --smart-case"
 alias mkdir   "mkdir -p"
