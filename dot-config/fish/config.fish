@@ -120,12 +120,15 @@ abbr-many "git pull"            gpull gpll gp
 abbr-many "git status"          gstatus gstat gs
 abbr-many "git status --staged" gstatuss gstats gss
 abbr-many "git unstage"         gunstage gun gu
+abbr-many "git branch"          gbranch gb
 abbr --command git "unstage" "restore --staged"
 abbr --command git "ammend" "commit --ammend"
 abbr --command git "log1" "log --oneline"
 abbr --command git "stat" "status"
 abbr gri "git rebase --interactive"
 abbr grc "git rebase --continue"
+abbr gshow "git show"
+abbr lg "lazygit"
 
 function manswitch
     man $argv[1] | less -p "^ +$argv[2]"
