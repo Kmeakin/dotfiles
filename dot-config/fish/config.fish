@@ -86,7 +86,7 @@ export LESS="--ignore-case --mouse --use-color --RAW-CONTROL-CHARS"
 
 # Convience aliases
 alias which "type --all"
-alias ls "eza --all --header --icons --hyperlink --git --binary"
+alias ls "eza --all --header --icons --git --binary"
 alias-many "ls -l" ll l
 
 function cat-or-ls
