@@ -31,12 +31,8 @@ if test "$(uname)" = "Darwin"
     push-front PATH /opt/homebrew/bin
     push-front PATH /opt/homebrew/sbin
 
-    push-front INFOPATH /opt/homebrew/share/info
-    push-front MANPATH /opt/homebrew/share/man
-
-    # Use the built-in search paths if all other entries fail
-    push-back INFOPATH ""
-    push-back MANPATH ""
+    set --unpath INFOPATH "/opt/homebrew/share/info:$INFOPATH"
+    set --unpath MANPATH "/opt/homebrew/share/man:$MANPATH"
 
     ## LLVM
     push-front PATH "/opt/homebrew/opt/llvm/bin"
@@ -87,6 +83,7 @@ export LESS="--ignore-case --mouse --use-color --RAW-CONTROL-CHARS"
 # Convience aliases
 alias which "type --all"
 alias ls "eza --all --header --icons --git --binary"
+alias tree "ls --tree --git-ignore"
 alias-many "ls -l" ll l
 
 function show
