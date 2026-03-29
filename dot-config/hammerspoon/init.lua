@@ -9,5 +9,5 @@ local function toggleApp(name)
   end
 end
 
-hs.hotkey.bind({}, "F12", function() toggleApp("iTerm") end)
+hs.hotkey.bind({}, "F12", function() toggleApp("ghostty") end)
 
