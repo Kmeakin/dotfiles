@@ -131,7 +131,10 @@ abbr --command git "unstage" "restore --staged"
 abbr --command git "ammend" "commit --ammend"
 abbr --command git "log1" "log --oneline"
 abbr --command git "stat" "status"
+abbr gr "git rebase"
 abbr gri "git rebase --interactive"
+abbr grim "git rebase --interactive master"
+abbr grm "git rebase master"
 abbr grc "git rebase --continue"
 abbr gshow "git show"
 abbr lg "lazygit"
@@ -156,3 +159,4 @@ end
 if test -d $(brew --prefix fish)"/share/fish/vendor_completions.d"
     set -p fish_complete_path $(brew --prefix fish)/share/fish/vendor_completions.d
 end
+
