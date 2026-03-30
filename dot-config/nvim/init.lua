@@ -50,3 +50,5 @@ vim.opt.smartcase  = true -- Unless search contains uppercase
 -- MiniDeps.add("sainnhe/sonokai")
 MiniDeps.add("maxmx03/solarized.nvim")
 vim.cmd("colorscheme solarized")
+
+MiniDeps.add("folke/which-key.nvim")
