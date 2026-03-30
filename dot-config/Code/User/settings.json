@@ -1,36 +1,83 @@
-// -*- mode: jsonc; -*-
 {
+    // Fonts
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.fontSize": 15,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.linkedEditing": true,
+    "editor.inlayHints.fontSize": 11,
+
+    // Theme
+    "workbench.preferredDarkColorTheme": "Solarized Dark",
+    "workbench.preferredLightColorTheme": "Solarized Light",
+    "window.autoDetectColorScheme": true,
+
+    // UI
+    "editor.inlayHints.enabled": "onUnlessPressed",
     "editor.minimap.enabled": false,
-    "editor.mouseWheelZoom": true,
+    "editor.mouseWheelZoom": false,
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "boundary",
-    "editor.rulers": [
-        80
-    ],
+    "editor.rulers": [80],
     "editor.stickyScroll.maxLineCount": 20,
-    "editor.tabSize": 4,
     "editor.unicodeHighlight.nonBasicASCII": false,
+    "errorLens.problemRangeDecorationEnabled": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmPasteNative": false,
-    "files.associations": {
-        ".clang-format": "yaml"
-    },
+    "file-browser.hideDotfiles": false,
+    "file-browser.hideIgnoredFiles": false,
+    "file-browser.labelIgnoredFiles": true,
+    "problems.visibility": true,
+    "scm.repositories.selectionMode": "single",
+    "search.useParentIgnoreFiles": true,
+    "testing.resultsView.layout": "treeLeft",
+    "window.customTitleBarVisibility": "never",
+    "window.titleBarStyle": "native",
+    "workbench.activityBar.location": "top",
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.labelFormat": "medium",
+    "workbench.editor.scrollToSwitchTabs": true,
+    "workbench.editor.showTabIndex": true,
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.editor.tabSizingFixedMinWidth": 38,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.secondarySideBar.showLabels": true,
+    "workbench.tree.renderIndentGuides": "always",
+
+    // General editing
+    "editor.linkedEditing": true,
+    "files.refactoring.autoSave": true,
+    "files.restoreUndoStack": true,
+
+    // Formatting
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "editor.formatOnType": true,
+    "editor.tabSize": 4,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    "magit.forge-enabled": true,
+
+    // Terminal
+    "terminal.integrated.enableVisualBell": true,
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.rightClickBehavior": "default",
+    "terminal.integrated.scrollback": 2147483647,
+
+    // Languages
+    "files.associations": {
+        ".clang-format": "yaml"
+    },
+
+    // Languages: Rust
     "rust-analyzer.cargo.targetDir": true,
     "rust-analyzer.check.command": "clippy",
     "rust-analyzer.completion.fullFunctionSignatures.enable": true,
     "rust-analyzer.completion.termSearch.enable": true,
+    "rust-analyzer.diagnostics.experimental.enable": true,
     "rust-analyzer.diagnostics.previewRustcOutput": true,
     "rust-analyzer.diagnostics.styleLints.enable": true,
     "rust-analyzer.diagnostics.useRustcErrorCode": true,
@@ -49,111 +96,56 @@
     "rust-analyzer.references.excludeImports": true,
     "rust-analyzer.references.excludeTests": true,
     "rust-analyzer.restartServerOnConfigChange": true,
+    "rust-analyzer.rustfmt.rangeFormatting.enable": true,
     "rust-analyzer.semanticHighlighting.operator.specialization.enable": true,
     "rust-analyzer.semanticHighlighting.punctuation.enable": true,
     "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang": true,
     "rust-analyzer.semanticHighlighting.punctuation.specialization.enable": true,
     "rust-analyzer.testExplorer": true,
-    "search.useParentIgnoreFiles": true,
+
+    // Languages: TOML
+    "evenBetterToml.schema.links": true,
+    "evenBetterToml.semanticTokens": true,
+    "evenBetterToml.taplo.bundled": false,
+
+    // Vim
     "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vspacecode.bindingOverrides": [],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": [
-                "<space>"
-            ],
-            "commands": [
-                "vspacecode.space"
-            ]
+            "before": [ "<space>" ],
+            "commands": [ "vspacecode.space" ]
         },
         {
-            "before": [
-                ","
-            ],
-            "commands": [
-                "vspacecode.space",
-                {
-                    "args": "m",
-                    "command": "whichkey.triggerKey"
-                }
-            ]
+            "before": [ "," ],
+            "commands": [ "vspacecode.space", { "args": "m", "command": "whichkey.triggerKey" } ]
         },
         {
-            "before": [
-                "z",
-                "m"
-            ],
-            "commands": [
-                "editor.foldAll"
-            ]
+            "before": [ "z", "m" ],
+            "commands": [ "editor.foldAll" ]
         },
         {
-            "before": [
-                "z",
-                "r"
-            ],
-            "commands": [
-                "editor.unfoldAll"
-            ]
+            "before": [ "z", "r" ],
+            "commands": [ "editor.unfoldAll" ]
         }
     ],
-    "vim.useSystemClipboard": true,
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": [
-                "<space>"
-            ],
-            "commands": [
-                "vspacecode.space"
-            ]
+            "before": [ "<space>" ],
+            "commands": [ "vspacecode.space" ]
         },
         {
-            "before": [
-                ","
-            ],
-            "commands": [
-                "vspacecode.space",
-                {
-                    "args": "m",
-                    "command": "whichkey.triggerKey"
-                }
-            ]
+            "before": [ "," ],
+            "commands": [ "vspacecode.space", { "args": "m", "command": "whichkey.triggerKey" } ]
         },
         {
-            "before": [
-                ">"
-            ],
-            "commands": [
-                "editor.action.indentLines"
-            ]
+            "before": [ ">" ],
+            "commands": [ "editor.action.indentLines" ]
         },
         {
-            "before": [
-                "<"
-            ],
-            "commands": [
-                "editor.action.outdentLines"
-            ]
+            "before": [ "<" ],
+            "commands": [ "editor.action.outdentLines" ]
         }
     ],
-    "vspacecode.bindingOverrides": [],
-    "window.autoDetectColorScheme": true,
-    "window.customTitleBarVisibility": "never",
-    "window.titleBarStyle": "native",
-    "workbench.commandPalette.experimental.suggestCommands": true,
-    "workbench.editor.highlightModifiedTabs": true,
-    "workbench.editor.scrollToSwitchTabs": true,
-    "workbench.preferredDarkColorTheme": "Solarized Dark",
-    "workbench.preferredLightColorTheme": "Solarized Light",
-    "workbench.tree.renderIndentGuides": "always",
-    "terminal.integrated.rightClickBehavior": "default",
-    "terminal.integrated.profiles.linux": {
-        "fish (linuxbrew)": {
-            "path": "/home/linuxbrew/.linuxbrew/bin/fish"
-        },
-    },
-    "terminal.integrated.scrollback": 2147483647,
-    "terminal.integrated.defaultProfile.linux": "fish (linuxbrew)",
-    "terminal.integrated.fontLigatures.enabled": true,
-    "terminal.integrated.fontSize": 15,
-    "terminal.integrated.fontWeight": "normal",
 }
