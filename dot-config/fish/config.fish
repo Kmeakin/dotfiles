@@ -22,40 +22,10 @@ alias push-front "set --prepend --global --export"
 alias push-back  "set --append  --global --export"
 alias unset      "set --erase"
 
-# Homebrew
-if test "$(uname)" = "Darwin"
-    export HOMEBREW_PREFIX="/opt/homebrew"
-    export HOMEBREW_REPOSITORY="/opt/homebrew"
-    export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
-
-    push-front PATH /opt/homebrew/bin
-    push-front PATH /opt/homebrew/sbin
-
-    set --unpath INFOPATH "/opt/homebrew/share/info:$INFOPATH"
-    set --unpath MANPATH "/opt/homebrew/share/man:$MANPATH"
-
-    ## LLVM
-    push-front PATH "/opt/homebrew/opt/llvm/bin"
-    push-front LDFLAGS "-L/opt/homebrew/opt/llvm/lib"
-    push-front CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
-
-    ## GCC
-    push-front PATH "/opt/homebrew/opt/binutils/bin"
-    push-front LDFLAGS "-L/opt/homebrew/opt/binutils/lib"
-    push-front CPPFLAGS "-I/opt/homebrew/opt/binutils/include"
-
-    # Hammerspoon
-    defaults write org.hammerspoon.Hammerspoon MJConfigFile \
-        "$XDG_CONFIG_HOME/hammerspoon/init.lua"
-else
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-end
-
 # Rust
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 push-front PATH "$CARGO_HOME/bin"
-push-front PATH "$(brew --prefix rustup)/bin"
 
 function alias-many
     set cmd $argv[1]
@@ -150,13 +120,5 @@ end
 abbr -a !! --position anywhere --function last-history-item
 
 # Theme
-fish_config theme choose 'Solarized Dark'
-
-if test -d $(brew --prefix fish)"/share/fish/completions"
-    set -p fish_complete_path $(brew --prefix fish)/share/fish/completions
-end
-
-if test -d $(brew --prefix fish)"/share/fish/vendor_completions.d"
-    set -p fish_complete_path $(brew --prefix fish)/share/fish/vendor_completions.d
-end
+fish_config theme choose 'solarized'
 
