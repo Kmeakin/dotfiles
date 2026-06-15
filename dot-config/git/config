@@ -1,6 +1,15 @@
 [user]
 name  = Karl Meakin
-email = karl.meakin@arm.com
+email = karlwfmeakin@gmail.com
+signingkey = /Users/karmea01/.ssh/id_ed25519.pub
+
+# Sign commits
+[commit]
+gpgSign = true
+
+# Use SSH keys for commit signing
+[gpg]
+format = ssh
 
 [sendemail]
 smtpserver     = mail.arm.com
