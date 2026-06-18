@@ -44,18 +44,18 @@ if test "$(uname)" = "Darwin"
     push-front LDFLAGS "-L/opt/homebrew/opt/binutils/lib"
     push-front CPPFLAGS "-I/opt/homebrew/opt/binutils/include"
 
+    # Rust
+    push-front PATH "$(brew --prefix rustup)/bin"
+
     # Hammerspoon
     defaults write org.hammerspoon.Hammerspoon MJConfigFile \
         "$XDG_CONFIG_HOME/hammerspoon/init.lua"
-else
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 end
 
 # Rust
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 push-front PATH "$CARGO_HOME/bin"
-push-front PATH "$(brew --prefix rustup)/bin"
 
 function alias-many
     set cmd $argv[1]
@@ -143,7 +143,6 @@ function manswitch
     man $argv[1] | less -p "^ +$argv[2]"
 end
 
-
 function last-history-item
     echo $history[1]
 end
@@ -151,12 +150,3 @@ abbr -a !! --position anywhere --function last-history-item
 
 # Theme
 fish_config theme choose 'Solarized Dark'
-
-if test -d $(brew --prefix fish)"/share/fish/completions"
-    set -p fish_complete_path $(brew --prefix fish)/share/fish/completions
-end
-
-if test -d $(brew --prefix fish)"/share/fish/vendor_completions.d"
-    set -p fish_complete_path $(brew --prefix fish)/share/fish/vendor_completions.d
-end
-
