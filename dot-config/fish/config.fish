@@ -46,10 +46,6 @@ if test "$(uname)" = "Darwin"
 
     # Rust
     push-front PATH "$(brew --prefix rustup)/bin"
-
-    # Hammerspoon
-    defaults write org.hammerspoon.Hammerspoon MJConfigFile \
-        "$XDG_CONFIG_HOME/hammerspoon/init.lua"
 end
 
 # Rust

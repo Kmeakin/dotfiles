@@ -109,6 +109,10 @@
 
         system.primaryUser = "karmea01";
 
+        system.defaults.CustomUserPreferences = {
+          "org.hammerspoon.Hammerspoon".MJConfigFile = "~/.config/hammerspoon/init.lua";
+        };
+
         nix-homebrew = {
           enable = true;
           enableRosetta = true;
