@@ -29,3 +29,16 @@ diffFilter = delta
 
 [delta]
 side-by-side = true
+
+[format]
+pretty=fancy
+
+[pretty]
+fancy=\
+%C(reset)Commit: %C(red)%h %d%n\
+%C(reset)Author: %C(blue)%an (%ae)%C(reset)%n\
+%C(reset)Date:   %C(yellow)%cd (%cr)%C(reset)%n\
+%C(reset)%B%n\
+
+[alias]
+fancy-log = log --decorate --graph --pretty=fancy
