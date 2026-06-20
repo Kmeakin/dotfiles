@@ -1,7 +1,7 @@
 [user]
 name  = Karl Meakin
 email = karlwfmeakin@gmail.com
-signingkey = /Users/karmea01/.ssh/id_ed25519.pub
+signingkey = ~/.ssh/id_ed25519.pub
 
 # Sign commits
 [commit]
